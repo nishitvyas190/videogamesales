@@ -1,0 +1,59 @@
+In top 100 games, the Shooting was maximum which says that Shooting games are mostly liked by the people as in, as it is in top 100 and also getting majority.
+In whole dataset, Action games are maximum, we can find the reason why Action in whole being major is not at top in top100
+More than half of the games in top 100 were published by Nintendo, very popular
+Nintendo is the highest in Global_Sales
+Out of 52 games in Top100, 32 games lies in Top50 and remaining 20 in other half.
+Wii Sports game is only the game that did the highest Global Sales, 82.74M (Outlier)
+
+> mean(top100[!(top100$Name == "Wii Sports"),"Global_Sales"])
+[1] 13.93172
+> mean(top100$Global_Sales)
+[1] 14.6198
+> median(top100$Global_Sales)
+[1] 11.255
+> median(top100[!(top100$Name == "Wii Sports"),"Global_Sales"])
+[1] 11.18
+Spread of data Range and IQR
+The range of Global_Sales is 75.4M because of an outlier but IQR is 6.95M as IQR is insensitive to outliers.
+
+Sales DEtails
+Japan Sales is mostly concentratred on Nintendo and Sony, Japanese Companies
+
+
+
+
+Platform Details
+Nintendo publishes on 8 out 17 platforms
+PSP Platfrom has only one publisher "Take-Two Interactive", same is with other platforms such as 3DS, DS, GB, GBA, N64, NES, SNES where "Nintendo", XBOX too has only "Microsoft" and "Atari" works only with 2600 platform.
+
+Genre Details
+Nintendo mainly earned in Mario games 
+Nintendo has worked on almost all the genres and out of them they worked most on the "Platform" in that too they made 14/15 games of Super Mario, in mario list 8 of them were in top 50.
+"Role-Playing" has Pokemon games in which 8/11 were in top 50.
+Nintendo has 0 "strategy" games
+
+Activision is successful in making Shooter games in top100 as there are 14/22 games
+
+
+
+Extra Points
+Nintendo is versatile
+Highest Games were designed on X360 following Wii
+Take-Two Interactive are good at designing Action games #game=9 only 2 publisher Nintendo and EA has designed Action games but werent ranked good as compared to Take-Two
+
+this proves that Japanese dont prefer the games with less than score 2
+> summary(top100[top100$Publisher=="Nintendo" & top100$JP_Sales>3.5,"Genre"])
+      Action    Adventure     Fighting         Misc     Platform 
+           1            0            0            1            6 
+      Puzzle       Racing Role-Playing      Shooter   Simulation 
+           2            3            6            0            2 
+      Sports     Strategy 
+           2            0 
+> summary(top100[top100$JP_Sales>3.5,"Genre"])
+      Action    Adventure     Fighting         Misc     Platform 
+           1            0            0            1            6 
+      Puzzle       Racing Role-Playing      Shooter   Simulation 
+           2            3            7            0            2 
+      Sports     Strategy 
+           2            0 
+In shooting too, only Call of Duty: Black Ops 2 got a considerable JP_sales
